@@ -83,8 +83,8 @@ class SinglyLinkedList:
 
     def __str__(self):
         """
-        This functin returns a the human-readable
-        representation of a singly linked list.
+        This functin returns a human-readable
+        representation of the singly linked list.
         """
         str = ""
         temp_node = self.__head
