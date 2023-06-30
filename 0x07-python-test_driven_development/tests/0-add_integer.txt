@@ -1,0 +1,66 @@
+The ``0-add_integer`` module
+============================
+
+Testing ``add_integer``
+---------------------
+
+First import ``add_integer`` from ``0-add_integer`` module:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Now test it:
+
+    Case no second arg (second arg is optional):
+
+        >>> add_integer(2)
+        100
+
+    Case only integers:
+
+        >>> add_integer(1, 2)
+        3
+
+        >>> add_integer(-1, 2)
+        1
+
+        >>> add_integer(-1, -2)
+        -3
+
+    Case mixed integer and flout:
+
+        >>> add_integer(2.0, 3)
+        5
+
+        >>> add_integer(2, -2.5)
+        0
+
+        >>> add_integer(2.5, -1)
+        1
+
+    Case only flouts:
+
+        >>> add_integer(2.0, 3.0)
+        5
+
+        >>> add_integer(2.5, 3.5)
+        5
+        
+        >>> add_integer(2.5, -3.5)
+        -1
+
+    Case one of two numbers is not integer nor flout:
+
+        >>> add_integer(True, 2)
+        Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer
+
+        >>> add_integer(1, "test")
+        Traceback (most recent call last):
+        ...
+        TypeError: b must be an integer
+
+        >>> add_integer(None)
+        Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer
