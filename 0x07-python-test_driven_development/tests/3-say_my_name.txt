@@ -1,0 +1,43 @@
+The ``3-say_my_name`` module
+============================
+
+Testing ``say_my_name``
+---------------------
+
+First import ``say_my_name`` from ``3-say_my_name`` module:
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Now test it:
+
+    Case no second arg (second arg is optional):
+
+        >>> say_my_name("Islam")
+        My name is Islam 
+
+    Case first_name and last_name is strings:
+
+        >>> say_my_name("Islam", "Hany")
+        My name is Islam Hany
+
+    Case one of two args is not a string:
+
+        >>> say_my_name(10, "Hany")
+        Traceback (most recent call last):
+        ...
+        TypeError: first_name must be a string
+
+        >>> say_my_name(None, "Hany")
+        Traceback (most recent call last):
+        ...
+        TypeError: first_name must be a string
+
+        >>> say_my_name("Islam", False)
+        Traceback (most recent call last):
+        ...
+        TypeError: last_name must be a string
+
+    Case bad formatted args:
+
+        >>> say_my_name("   iSlam ", "HAny  ")
+        My name is Islam Hany

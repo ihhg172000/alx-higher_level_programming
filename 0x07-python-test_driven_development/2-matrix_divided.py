@@ -10,7 +10,7 @@ def matrix_divided(matrix, div):
 
     Args:
         matrix (list): A matrix of integers or floats.
-        div (int or float): The divisor of all elemens.
+        div (int or float): The divisor of all elements.
 
     Returns:
         list: A new matrix.
