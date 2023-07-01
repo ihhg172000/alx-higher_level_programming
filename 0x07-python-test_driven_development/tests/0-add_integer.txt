@@ -26,7 +26,7 @@ Now test it:
         >>> add_integer(-1, -2)
         -3
 
-    Case mixed integer and flout:
+    Case mixed integer and float:
 
         >>> add_integer(2.0, 3)
         5
@@ -48,7 +48,7 @@ Now test it:
         >>> add_integer(2.5, -3.5)
         -1
 
-    Case one of two numbers is not integer nor flout:
+    Case one of two numbers is not integer nor float:
 
         >>> add_integer(True, 2)
         Traceback (most recent call last):
