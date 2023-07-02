@@ -2,16 +2,18 @@
 """
 Contains the definition of 'say_my_name' function.
 """
+
+
 def say_my_name(first_name, last_name=""):
     """
     Prints My name is <first name> <last name>.
-    
+
     Args:
         first_name (str): The first name.
         second_name (str): The second name.
-        
+
     Raises:
-        TypeError: If one of two args is not a string. 
+        TypeError: If one of two args is not a string.
     """
     if not isinstance(first_name, str):
         raise TypeError("first_name must be a string")

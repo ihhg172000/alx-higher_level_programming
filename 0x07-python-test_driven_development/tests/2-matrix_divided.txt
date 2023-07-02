@@ -1,24 +1,22 @@
 The ``2-matrix_divided`` module
 ============================
 
-Testing ``matrix_divided``
+Test ``matrix_divided``
 ---------------------
 
-First import ``matrix_divided`` from ``2-matrix_divided`` module:
+Import ``matrix_divided`` from ``2-matrix_divided`` module:
 
     >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 
-Now test it:
+Test:
 
-    Case matrix contains only integers and floats, div is a number not equal to 0:
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> print(matrix_divided(matrix, 3))
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+    >>> print(matrix)
+    [[1, 2, 3], [4, 5, 6]]
 
-        >>> matrix = [[1, 2, 3], [4, 5, 6]]
-        >>> print(matrix_divided(matrix, 3))
-        [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
-        >>> print(matrix)
-        [[1, 2, 3], [4, 5, 6]]
-
-    Case div is not a number:
+    Test case divisor is not a number:
 
         >>> print(matrix_divided(matrix, True))
         Traceback (most recent call last):
@@ -35,14 +33,14 @@ Now test it:
         ...
         TypeError: div must be a number
 
-    Case div is equal 0:
+    Test case divisor is equal 0:
 
         >>> print(matrix_divided(matrix, 0))
         Traceback (most recent call last):
         ...
         ZeroDivisionError: division by zero
 
-    Case matrix contains element not integer nor float:
+    Test case matrix contains element not integer nor float:
 
         >>> matrix = [[1, "test", 3], [4, 5, 6]]
         >>> print(matrix_divided(matrix, 3))
@@ -62,7 +60,7 @@ Now test it:
         ...
         TypeError: matrix must be a matrix (list of lists) of integers/floats
 
-    Case if one row not the same size as other rows:
+    Test case if one row not the same size as other rows:
     
         >>> matrix = [[1, 2, 3], [4, 5, 6, 7]]
         >>> print(matrix_divided(matrix, 3))

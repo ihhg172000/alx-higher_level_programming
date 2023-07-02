@@ -16,10 +16,11 @@ def matrix_divided(matrix, div):
         list: A new matrix.
 
     Raises:
-        TypeError: If the divisor is not a number.
+        TypeError:
+                If the divisor is not a number.
+                If one row not the same size as other rows.
+                If the matrix contains element not integer nor float.
         ZeroDivisionError: If the divisor is equal to 0
-        TypeError: If one row not the same size as other rows.
-        TypeError: If the matrix contains element not integer nor float.
     """
     if not isinstance(div, (int, float)) or isinstance(div, bool):
         raise TypeError("div must be a number")

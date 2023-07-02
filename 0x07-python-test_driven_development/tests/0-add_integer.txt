@@ -1,32 +1,28 @@
 The ``0-add_integer`` module
 ============================
 
-Testing ``add_integer``
+Test ``add_integer``
 ---------------------
 
-First import ``add_integer`` from ``0-add_integer`` module:
+Import ``add_integer`` from ``0-add_integer`` module:
 
     >>> add_integer = __import__('0-add_integer').add_integer
 
-Now test it:
+Test:
 
-    Case no second arg (second arg is optional):
+    >>> add_integer(2)
+    100
 
-        >>> add_integer(2)
-        100
+    >>> add_integer(1, 2)
+    3
 
-    Case only integers:
+    >>> add_integer(-1, 2)
+    1
 
-        >>> add_integer(1, 2)
-        3
+    >>> add_integer(-1, -2)
+    -3
 
-        >>> add_integer(-1, 2)
-        1
-
-        >>> add_integer(-1, -2)
-        -3
-
-    Case mixed integer and float:
+    Test case mixed integer and float:
 
         >>> add_integer(2.0, 3)
         5
@@ -37,7 +33,7 @@ Now test it:
         >>> add_integer(2.5, -1)
         1
 
-    Case only flouts:
+    Test case only flouts:
 
         >>> add_integer(2.0, 3.0)
         5
@@ -48,7 +44,7 @@ Now test it:
         >>> add_integer(2.5, -3.5)
         -1
 
-    Case one of two numbers is not integer nor float:
+    Test case one of two numbers is not integer nor float:
 
         >>> add_integer(True, 2)
         Traceback (most recent call last):
