@@ -64,3 +64,15 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return 0
         return 2 * (self.width + self.height)
+
+    def __str__(self):
+        """
+        Returns a human-readable representation of rectangle.
+        """
+        str = ''
+        for x in range(self.height):
+            for y in range(self.width):
+                str += '#'
+            if x < (self.height - 1):
+                str += '\n'
+        return str
