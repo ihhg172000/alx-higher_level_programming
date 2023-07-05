@@ -26,7 +26,6 @@ Test:
     Test case size is equal to 0:
 
         >>> print_square(0)
-        <BLANKLINE>
 
     Test case size is not integer:
 
@@ -51,3 +50,10 @@ Test:
         Traceback (most recent call last):
         ...
         ValueError: size must be >= 0
+
+    Test case missing args:
+
+        >>> print_square()
+        Traceback (most recent call last):
+        ...
+        TypeError: print_square() missing 1 required positional argument: 'size'
