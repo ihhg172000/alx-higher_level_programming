@@ -82,3 +82,15 @@ Test:
         Traceback (most recent call last):
         ...
         ValueError: m_a and m_b can't be multiplied
+
+    Test case no args:
+
+        >>> print(matrix_mul([[1, 2], [1, 2]]))
+        Traceback (most recent call last):
+        ...
+        TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
+
+        >>> print(matrix_mul())
+        Traceback (most recent call last):
+        ...
+        TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
