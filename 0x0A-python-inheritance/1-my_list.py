@@ -6,4 +6,5 @@ class MyList(list):
     """Class that extends 'list' class."""
     def print_sorted(self):
         """Prints the list, but sorted (ascending sort)"""
-        print(sorted(self))
+        if self != []:
+            print(sorted(self))
