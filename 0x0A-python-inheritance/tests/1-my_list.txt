@@ -10,16 +10,24 @@ Import ``MyList`` from ``1-my_list`` module:
 
 Test:
 
-    >>> my_list = MyList([1, 2, 3])
-    >>> isinstance(my_list, list)
-    True
+    List instance:
 
-    No args:
+        >>> my_list = MyList([1, 2, 3])
+        >>> isinstance(my_list, list)
+        True
+
+    Pass args:
+
+        >>> my_list = MyList([1, 2, 3])
+        >>> my_list.print_sorted(4)
+        Traceback (most recent call last):
+        ...
+        TypeError: print_sorted() takes 1 positional argument but 2 were given
+
+    Empty:
 
         >>> my_list = MyList()
         >>> my_list.print_sorted()
-
-    Empty:
 
         >>> my_list = MyList([])
         >>> my_list.print_sorted()
