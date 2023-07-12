@@ -1,11 +1,17 @@
 #!/usr/bin/python3
 """
-Adds all arguments to a Python list,
-and then save them to a file.
+Adds all arguments to a Python list, and then save them to a file.
 """
 from sys import argv
 import json
 
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 
-with open('add_item.json', 'w') as file:
-    json.dump(argv[1:], file)
+try:
+    o = load_from_json_file('add_item.json')
+    o += argv[1:]
+except FileNotFoundError:
+    o = argv[1:]
+
+save_to_json_file(o, 'add_item.json')
