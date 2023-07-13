@@ -7,8 +7,9 @@ class Square(Rectangle):
     """Definition of `Square` class."""
     def __init__(self, size):
         """Initializes a Square instance"""
-        super().__init__(size, size)
+        self.integer_validator("size", size)
         self.__size = size
+        super().__init__(size, size)
 
     def __str__(self):
         """Returns a human-readable representation of Square instance"""
