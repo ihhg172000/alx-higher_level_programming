@@ -90,6 +90,21 @@ class Rectangle(Base):
         """
         return self.width * self.height
 
+    def display(self):
+        """
+        Prints in stdout the Rectangle instance with the character #.
+        """
+        print('\n' * self.y, end='')
+        r = ' ' * self.x + '#' * self.width + '\n'
+        print(r * self.height, end='')
+
+    def __str__(self):
+        """
+        Returns human-readable repr of 'Rectangle'.
+        """
+        return (f'[Rectangle] ({self.id}) {self.x}/{self.y} ' +
+        f'- {self.width}/{self.height}')
+
     @staticmethod
     def __integer_validation(value, attr_name):
         """
