@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Contains the unittest for 'Base' class.
+Contains the unittest for 'base' module.
 """
 import unittest
 from models.base import Base
@@ -23,4 +23,5 @@ class TestBase(unittest.TestCase):
 
 
 if __name__ == '__main__':
+    """main"""
     unittest.main()
