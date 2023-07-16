@@ -47,6 +47,13 @@ class TestRectangle(unittest.TestCase):
 
         self.assertTrue("x must be >= 0", err.exception)
 
+    def test_area(self):
+        """
+        Test area.
+        """
+        rect = Rectangle(5, 10)
+        self.assertEqual(rect.area(), 50)
+
 
 if __name__ == '__main__':
     """main"""

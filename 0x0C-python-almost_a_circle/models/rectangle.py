@@ -84,6 +84,12 @@ class Rectangle(Base):
             raise ValueError('width must be >= 0')
         self.__y = value
 
+    def area(self):
+        """
+        Returns the area value.
+        """
+        return self.width * self.height
+
     @staticmethod
     def __integer_validation(value, attr_name):
         """
