@@ -73,7 +73,7 @@ class Base:
         """
         try:
             with open(f'{cls.__name__}.json', 'r') as file:
-                dicts = json.load(file)
+                dicts = cls.from_json_string(file.read())
                 objts = []
                 for dict in dicts:
                     objts.append(cls.create(**dict))
