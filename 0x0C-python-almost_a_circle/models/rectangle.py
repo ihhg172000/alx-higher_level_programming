@@ -99,6 +99,9 @@ class Rectangle(Base):
         print(r * self.height, end='')
 
     def update(self, *args, **kwargs):
+        """
+        Updates the 'Rectangle' instance.
+        """
         if len(args) == 0:
             for key, value in kwargs.items():
                 setattr(self, key, value)
@@ -110,6 +113,16 @@ class Rectangle(Base):
             self.y = args[4]
         except IndexError:
             pass
+
+    def to_dictionary(self):
+        """
+        Returns the dictionary representation of a Rectangle.
+        """
+        return {'x': self.x,
+                'y': self.y,
+                'id': self.id,
+                'height': self.height,
+                'width': self.width}
 
     def __str__(self):
         """

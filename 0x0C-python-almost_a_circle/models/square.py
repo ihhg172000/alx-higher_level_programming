@@ -12,13 +12,6 @@ class Square(Rectangle):
         """
         super().__init__(size, size, x, y, id)
 
-    def __str__(self):
-        """
-        Returns a human-readable representation of 'Rectangle'.
-        """
-        return (f'[Square] ({self.id}) {self.x}/{self.y} ' +
-                f'- {self.width}')
-
     @property
     def size(self):
         """
@@ -33,3 +26,34 @@ class Square(Rectangle):
         """
         self.width = value
         self.height = value
+
+    def update(self, *args, **kwargs):
+        """
+        Updates the 'Square' instance.
+        """
+        if len(args) == 0:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+        try:
+            self.id = args[0]
+            self.size = args[1]
+            self.x = args[2]
+            self.y = args[3]
+        except IndexError:
+            pass
+
+    def to_dictionary(self):
+        """
+        Returns the dictionary representation of a Square.
+        """
+        return {'x': self.x,
+                'y': self.y,
+                'id': self.id,
+                'size': self.size}
+
+    def __str__(self):
+        """
+        Returns a human-readable representation of 'Square'.
+        """
+        return (f'[Square] ({self.id}) {self.x}/{self.y} ' +
+                f'- {self.width}')
