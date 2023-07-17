@@ -98,12 +98,25 @@ class Rectangle(Base):
         r = ' ' * self.x + '#' * self.width + '\n'
         print(r * self.height, end='')
 
+    def update(self, *args, **kwargs):
+        if len(args) == 0:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+        try:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+            self.y = args[4]
+        except IndexError:
+            pass
+
     def __str__(self):
         """
-        Returns human-readable repr of 'Rectangle'.
+        Returns a human-readable representation of 'Rectangle'.
         """
         return (f'[Rectangle] ({self.id}) {self.x}/{self.y} ' +
-        f'- {self.width}/{self.height}')
+                f'- {self.width}/{self.height}')
 
     @staticmethod
     def __integer_validation(value, attr_name):
