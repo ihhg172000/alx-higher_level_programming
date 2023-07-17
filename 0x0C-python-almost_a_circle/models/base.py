@@ -65,3 +65,18 @@ class Base:
             obj = Square(1)
         obj.update(**dictionary)
         return obj
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        Returns a list of instances.
+        """
+        try:
+            with open(f'{cls.__name__}.json', 'r') as file:
+                dicts = json.load(file)
+                objts = []
+                for dict in dicts:
+                    objts.append(cls.create(**dict))
+                return objts
+        except FileNotFoundError:
+            return []
