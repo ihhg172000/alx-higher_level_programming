@@ -36,8 +36,9 @@ class Base:
         """
         with open(f"{cls.__name__}.json", "w") as file:
             dicts = []
-            for obj in list_objs:
-                dicts.append(
-                    json.loads(cls.to_json_string(obj.to_dictionary()))
-                )
+            if type(list_objs) is list:
+                for obj in list_objs:
+                    dicts.append(
+                        json.loads(cls.to_json_string(obj.to_dictionary()))
+                    )
             json.dump(dicts, file)
