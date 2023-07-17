@@ -5,6 +5,9 @@ Contains the definition of 'Base' class.
 
 
 class Base:
+    """
+    Definition of 'Base' class.
+    """
     __nb_objects = 0
 
     def __init__(self, id=None):
