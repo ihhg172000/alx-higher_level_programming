@@ -84,7 +84,7 @@ class Rectangle(Base):
         """
         self.__integer_validation(value, 'y')
         if value < 0:
-            raise ValueError('width must be >= 0')
+            raise ValueError('y must be >= 0')
         self.__y = value
 
     def area(self):
