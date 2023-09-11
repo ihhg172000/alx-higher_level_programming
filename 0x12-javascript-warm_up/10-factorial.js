@@ -1,6 +1,4 @@
 #!/usr/bin/node
-import 'node:process';
-
 const number = process.argv[2];
 
 function factorial (number) {

@@ -1,6 +1,4 @@
 #!/usr/bin/node
-import 'node:process';
-
 const a = parseInt(process.argv[2]);
 const b = parseInt(process.argv[3]);
 
