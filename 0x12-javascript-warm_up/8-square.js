@@ -7,6 +7,9 @@ if (!size) {
   console.log('Missing size');
 }
 
-for (let i = 0; i < size; i++) {
+let i = 0;
+
+while (i < size) {
   console.log('X'.repeat(size));
+  i++;
 }
