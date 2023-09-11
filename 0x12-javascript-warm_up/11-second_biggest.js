@@ -9,7 +9,7 @@ if (process.argv.length === 2 || process.argv.length === 3) {
 const numbers = [];
 
 for (let i = 2; i < process.argv.length; i++) {
-  numbers.push(+process.argv[i]);
+  numbers.push(parseInt(process.argv[i]));
 }
 
 numbers.sort();
