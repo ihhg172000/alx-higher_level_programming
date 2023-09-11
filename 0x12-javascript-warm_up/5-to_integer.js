@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 import 'node:process';
 
 const number = parseInt(process.argv[2]);
