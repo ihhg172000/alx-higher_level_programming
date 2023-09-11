@@ -1,17 +1,14 @@
 #!/usr/bin/node
-import 'node:process';
+import { argv } from 'node:process';
 
-if (process.argv.length === 2 || process.argv.length === 3) {
+if (argv.length === 2 || argv.length === 3) {
   console.log(0);
-  process.exit();
+} else {
+  const numbers = argv.slice(2);
+
+  numbers.sort((a, b) => {
+    return a === b ? 0 : (a > b ? -1 : 1);
+  });
+
+  console.log(numbers[1]);
 }
-
-const numbers = [];
-
-for (let i = 2; i < process.argv.length; i++) {
-  numbers.push(parseInt(process.argv[i]));
-}
-
-numbers.sort();
-
-console.log(numbers[numbers.length - 2]);
