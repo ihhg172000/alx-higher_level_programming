@@ -1,8 +1,6 @@
 #!/usr/bin/node
-exports.logMe = function (item) {
-  if (typeof nb === 'undefined') {
-    nb = 0;
-  }
+let nb = 0;
 
+exports.logMe = function (item) {
   console.log(`${nb++}: ${item}`);
 };
