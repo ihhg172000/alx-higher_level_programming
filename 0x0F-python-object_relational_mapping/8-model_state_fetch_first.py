@@ -18,9 +18,8 @@ if __name__ == '__main__':
 
     session = Session(engine)
 
-    states = session.query(State).order_by(State.id).all()
+    first_state = session.query(State).order_by(State.id).first()
 
-    for i in range(0, len(states)):
-        print(f'{i + 1}: {states[i].name}')
+    print(f'1: {first_state.name}')
 
     session.close()
