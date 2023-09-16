@@ -18,7 +18,7 @@ if __name__ == '__main__':
     cursor = db.cursor()
 
     cursor.execute(
-        "SELECT * FROM states WHERE name = '{}' ORDER BY states.id"
+        "SELECT * FROM states WHERE name = BINARY '{}' ORDER BY states.id"
         .format(argv[4])
     )
 
