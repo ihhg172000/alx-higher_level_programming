@@ -20,6 +20,6 @@ if __name__ == '__main__':
 
     first_state = session.query(State).order_by(State.id).first()
 
-    print(f'1: {first_state.name}' if first_state is not None else '')
+    print(f'1: {first_state.name}' if first_state is not None else 'Nothing')
 
     session.close()
