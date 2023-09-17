@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-Contains the class definition of a City and
-an instance Base = declarative_base()
+Contains the class definition of a City
 """
 from sqlalchemy import Integer, String, ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, relationship

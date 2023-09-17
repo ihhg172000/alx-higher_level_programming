@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 """
-Contains the class definition of a City and
-an instance Base = declarative_base()
+Contains the class definition of a City
 """
-from sqlalchemy import Integer, String, ForeignKey
-from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy import Integer, String, Column, ForeignKey
+from sqlalchemy.orm import relationship
 from relationship_state import Base
 
 
@@ -14,7 +13,6 @@ class City(Base):
     """
     __tablename__ = 'cities'
 
-    id: Mapped[int] = mapped_column(primary_key=True)
-    name: Mapped[str] = mapped_column(String(128), nullable=False)
-    state_id: Mapped[int] = mapped_column(ForeignKey("states.id"))
-    state: Mapped["State"] = relationship(back_populates="cities")
+    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
+    name = Column(String(128), nullable=False)
+    state_id = Column(Integer, ForeignKey("states.id"), nullable=False)
