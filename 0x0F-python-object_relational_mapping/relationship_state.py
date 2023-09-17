@@ -20,4 +20,7 @@ class State(Base):
 
     id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column(String(128), nullable=False)
-    cities: Mapped[List['City']] = relationship(back_populates='state')
+    cities: Mapped[List['City']] = relationship(
+        cascade="all, delete",
+        back_populates='state'
+    )
