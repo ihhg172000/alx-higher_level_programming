@@ -8,7 +8,7 @@ if __name__ == '__main__':
         html = response.read()
         print(
             'Body response:\n'
-            f'\t - type: {type(html)}\n'
-            f'\t - content: {html}\n'
-            f'\t - utf8 content: {html.decode("utf-8")}'
+            f'\t- type: {type(html)}\n'
+            f'\t- content: {html}\n'
+            f'\t- utf8 content: {html.decode("utf-8")}'
         )
