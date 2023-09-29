@@ -11,7 +11,7 @@ if __name__ == '__main__':
     with requests.get(url) as response:
         if response.ok:
             try:
-                commits = reversed(response.json())
+                commits = response.json()
                 for i in range(0, 10):
                     try:
                         print(
