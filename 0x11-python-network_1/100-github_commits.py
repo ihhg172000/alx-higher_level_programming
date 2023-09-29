@@ -8,14 +8,17 @@ import requests
 
 if __name__ == '__main__':
     url = f'https://api.github.com/repos/{argv[1]}/{argv[2]}/commits'
-    with requests.get(url) as response:
+    params = {
+        'per_page' : 10
+    }
+    with requests.get(url, params=params) as response:
         if response.ok:
-            commits = list(reversed(response.json()))
-            for i in range(0, 10):
+            commits = response.json()
+            for commit in commits:
                 try:
                     print(
-                        f'{commits[i]["sha"]} '
-                        f'{commits[i]["commit"]["author"]["name"]}'
+                        f'{commit["sha"]} '
+                        f'{commit["commit"]["author"]["name"]}'
                     )
                 except IndexError:
                     break
