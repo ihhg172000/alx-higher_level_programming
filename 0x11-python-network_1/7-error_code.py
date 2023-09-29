@@ -10,6 +10,6 @@ import requests
 if __name__ == '__main__':
     with requests.get(argv[1]) as response:
         print(
-            response.text if response.status_code == 200
+            response.text if response.ok
             else f'Error code: {response.status_code}'
         )
