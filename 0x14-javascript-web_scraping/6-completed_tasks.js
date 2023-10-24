@@ -1,29 +1,27 @@
 #!/usr/bin/node
 const request = require('request');
 
-const options = {
-  url: process.argv[2],
-  qs: {
-    'completed': true
-  }
-};
-
 request(
-  options,
+  process.argv[2],
   function (error, response, body) {
-    if (!error) {
+    if (!error && response.statusCode === 200) {
       const tasks = JSON.parse(body);
-      const completedTasks = {};
+      const completedTasks = tasks.filter(task => {
+        return task.completed;
+      }
+      );
 
-      tasks.forEach(task => {
-        if (completedTasks[task.userId] === undefined) {
-          completedTasks[task.userId] = 1;
+      const usersTasks = {};
+
+      completedTasks.forEach(task => {
+        if (usersTasks[task.userId] === undefined) {
+          usersTasks[task.userId] = 1;
         } else {
-          completedTasks[task.userId] += 1;
+          usersTasks[task.userId] += 1;
         }
       });
 
-      console.log(completedTasks);
+      console.log(usersTasks);
     }
   }
 );
