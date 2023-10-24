@@ -1,8 +1,15 @@
 #!/usr/bin/node
 const request = require('request');
 
+const options = {
+  url: process.argv[2],
+  qs: {
+    'completed': true
+  }
+};
+
 request(
-  `${process.argv[2]}?completed=true`,
+  options,
   function (error, response, body) {
     if (!error) {
       const tasks = JSON.parse(body);
